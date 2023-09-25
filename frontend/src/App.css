@@ -1,0 +1,621 @@
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-fon-smoothing: grayscale;
+  font-style: 17px;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: black;
+}
+i,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  padding: 0;
+  margin: 0;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0px;
+}
+.row,
+.col-6,
+.col-4 {
+  margin: 0;
+  padding: 0;
+}
+.Announcement {
+  background-color: green;
+  padding: 10px 0px 6px 0px;
+}
+.Announcement .col-md-6 p {
+  color: white;
+  margin-right: 6rem;
+  font-size: 15px;
+}
+.Announcement .col-12 a {
+  color: white;
+  margin-right: 15px;
+  font-size: 15px;
+}
+
+.header {
+  padding: 10px, 0px 10px 0px;
+}
+
+.navbar-brand img {
+  width: 60%;
+}
+
+.input-group {
+  height: 50px;
+  width: 90%;
+}
+
+.search-button {
+  width: 20%;
+  background-color: black;
+  color: white;
+  border: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.Login-Register a:nth-last-child(1) {
+  margin-right: 0rem;
+}
+
+.badge {
+  background-color: red;
+  position: absolute;
+  top: -20px;
+  border-radius: 100px;
+  padding: 5px 7px;
+  font-size: 12px;
+}
+
+.name-button {
+  padding: 5px 15px;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  border-radius: 2px;
+  margin: 0 10px;
+}
+
+.dropdown-menu {
+  background-color: black o !important;
+  border: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.dropdown-menu a {
+}
+
+.dropdown-menu a:hover {
+  background-color: #1cb803 !important;
+  color: #ffffff !important;
+}
+
+.mobile-header {
+  display: none;
+}
+
+.section {
+  width: 100%;
+  padding-bottom: 6%;
+  padding-top: 2%;
+}
+
+.sidebar_item {
+  margin-bottom: 35px;
+}
+
+.sidebar_item h4 {
+  color: #1c1c1c;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+.sidebar_item ul {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar_item ul li {
+  list-style: none;
+  display: flex;
+}
+
+.sidebar_item ul li a {
+  font-size: 16px;
+  color: #000000;
+  line-height: 45px;
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.sidebar_item ul li img {
+  width: 25px;
+  object-fit: contain;
+  margin-left: 20px;
+}
+
+/* Aro onek css kora baki ase */
+
+.border-product {
+  padding: 15px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5px;
+}
+
+.shopBack {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: #f3f3f3;
+}
+
+.shopBack img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+}
+
+.shoptext {
+  padding-top: 10px;
+}
+
+.shoptext p a {
+  color: #252525;
+}
+
+.shoptext h3 {
+  color: #252525;
+  margin-top: 13px;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.rating {
+  margin: 5px 0;
+}
+
+.rating i {
+}
+
+/* aro onek kisu baki ase ekhane */
+
+.subscribe-head {
+  text-align: center;
+}
+
+.subscribe-head p {
+  color: #fff;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 0 0 39px;
+}
+
+.form-section input[type='email'] {
+  border: 0 none;
+  border-radius: 25px;
+  color: #9b9b9b;
+  font-size: 16px;
+  font-style: normal;
+  height: 51px;
+  letter-spacing: normal;
+  text-align: center;
+  width: 460px;
+}
+
+.form-section input[type='submit'] {
+  background-color: #1cb803;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  height: 52px;
+  letter-spacing: 0;
+  margin-left: -60px;
+  padding: 0 58px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.contectInfo {
+  padding: 70px 0;
+}
+
+.contect-Box,
+.box-info,
+.info-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-info {
+  width: 80%;
+  flex-direction: column;
+  padding: 40px 0;
+  box-shadow: 0px 0px 27px 0px rgb(243, 243, 243);
+}
+
+.info-image {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #1cb803;
+  border-radius: 100px;
+  font-size: 20px;
+  color: #1cb803;
+}
+
+.box-info h5 {
+  font-weight: bold;
+  font-size: 19px;
+  margin-top: 20px;
+}
+
+/* aro ase */
+
+.single-product {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.single-image {
+  background-color: #f3fbf7;
+  margin-right: 20px;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-image img {
+  width: 90%;
+  height: 700px;
+  object-fit: contain;
+}
+
+.product-name {
+  font-style: 25px;
+  font-weight: 600;
+  line-height: 22px;
+  margin-bottom: 30px;
+}
+
+.product-count .flex-box {
+  padding: 15px 25px;
+  border-bottom: 2px solid #f3f3f3;
+}
+
+.product-count .flex-box h6 {
+  font-size: 16px;
+}
+
+.product-count .flex-box span {
+  font-weight: 600;
+  color: #000000;
+}
+
+.product-count .flex-box select {
+  background-color: #f3f3f3;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  border: 0px;
+  border-radius: 5px;
+}
+
+.round-black-btn {
+  border: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.round-black-btn:hover,
+.round-black-btn:focus {
+  background: #1cb803;
+}
+
+.login-center {
+  padding: 50px 0;
+}
+
+.login,
+.login2 {
+  background: #fff;
+  border-radius: 5px;
+  position: absolute;
+  padding: 35px 30px 30px;
+  box-shadow: 0 1px 11px rgba(168, 168, 168, 0.27);
+  text-align: center;
+}
+
+.login input {
+  width: 100%;
+  padding: 20px 20px;
+  margin-top: 20px;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  color: #8a8a8a;
+}
+
+/* aro ase */
+
+.author-cart-cover {
+  height: 100px;
+  width: 100%;
+  background-size: cover;
+  background-image: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Ftodaysparent.mblycdn.com%2Ftp%2Fresized%2F2017%2F11%2F767x431%2Fhow-many-toys-do-kids-really-need-1280x960.jpg&tbnid=swT_35Uv9EEstM&vet=12ahUKEwjQuquTjqWBAxWzpekKHT8JDMwQMygCegQIARB7..i&imgrefurl=https%3A%2F%2Fwww.todaysparent.com%2Ffamily%2Fparenting%2Fhow-many-toys-do-kids-really-need%2F&docid=75C424SK-RQr1M&w=767&h=431&q=kids%20with%20toys%20image&ved=2ahUKEwjQuquTjqWBAxWzpekKHT8JDMwQMygCegQIARB7');
+}
+
+.author-cart-profile {
+  padding: 20px 10px;
+}
+
+.author-cart-avatar {
+  padding: 0 20px;
+}
+.author-cart-avatar img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 100px;
+  margin-top: -60px;
+  box-shadow: 0px 0px 0px 27px rgba(0, 0, 0, 0.377);
+}
+
+/* aro onek ase */
+
+/* .author-cart{} */
+
+.wizard .nav .active {
+  background-color: #e5fee9;
+  color: black;
+}
+
+.badge2 {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  color: #ffffff;
+}
+
+.form {
+  padding: 20px 0;
+}
+
+.form label {
+  padding: 10px 0;
+  color: #8a8a8a;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.form input {
+  padding: 20px 10px;
+  font-size: 17px;
+  background-color: #e4e4e4;
+}
+
+.form-container button {
+  padding: 15px 0;
+  border: 0px;
+  padding-top: 20px;
+  text-transform: uppercase;
+  font-size: 13px;
+  background-color: #1cb803;
+}
+
+/* aro ase */
+
+.link {
+  color: blue;
+  border-bottom: 1px solid blue;
+  padding-bottom: 5px;
+  font-size: 15px;
+}
+
+.link:hover {
+  color: blue;
+}
+
+.table-responsive {
+  width: 100%;
+}
+
+.cart-items {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 12px 20px 1px rgba(64, 64, 64, 0.09);
+  position: relative;
+}
+
+/* aro ase */
+
+.toal .sub {
+  color: #8c8c8c;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.total .total-price {
+  font-size: 20px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.cart-buttons {
+  margin: 90px 0;
+}
+
+.cart-buttons a button,
+.cart-buttons div button {
+  width: 80%;
+  padding: 15px 0;
+  border: 0px;
+  text-transform: uppercase;
+  font-size: 13px;
+  background-color: #1cb803;
+}
+
+/* aro ase */
+
+.cart-buttons a:nth-child(1) button {
+  background-color: #000000;
+}
+
+.footer {
+  background-color: #ececec;
+}
+
+.cart-name {
+  width: 4%;
+  margin: 10px;
+}
+
+.cart-name img {
+  width: 100%;
+  height: 50px;
+  object-fit: contain;
+}
+
+.payment-container {
+  margin-top: 20px;
+}
+
+.radio-container {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.radio-container input {
+  font-size: 17px;
+}
+
+.radio-container label {
+  padding: 0 20px;
+  font-style: 17px;
+}
+.order-detail {
+  padding: 30px 0;
+  background-color: #e5fee9;
+}
+
+.order-detail h5 {
+  margin-bottom: 6px;
+}
+
+.order-detail h5 {
+  margin-bottom: 6px;
+}
+
+.order-box {
+  border-radius: 100px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.order-product {
+  margin: 40px 0;
+  border-bottom: 2px solid #f3f3f3;
+  position: relative;
+}
+
+.order-product h4 {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.order-product img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+}
+
+.table-bordered {
+  background-color: #f3f3f3;
+}
+
+/* aro ase */
+
+.pagination .page link {
+  padding: 10px 30px;
+  color: black;
+}
+
+.page-item.active .page-link {
+  background-color: black;
+  border: 1px solid black;
+}
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
