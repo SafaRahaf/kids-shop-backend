@@ -15,7 +15,7 @@ const ImportData = express.Router();
 
 ImportData.post('/user', async (req, res) => {
   //   try {
-  await User.deleteMany({}); // Change Remove to deleteMany
+  await User.Remove({}); // Change Remove to deleteMany
   const importUser = await User.insertMany(users);
   res.send({ importUser });
   //   } catch (error) {
