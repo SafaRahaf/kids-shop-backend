@@ -1,4 +1,4 @@
-// const express = require('express');
+const express = require('express');
 // // const Products = require('./data/Products.json');
 // const dotenv = require('dotenv');
 // const connectToDatabase = require('./config/MongoDB.js');
@@ -32,8 +32,6 @@
 // app.listen(5000, () => {
 //   console.log(`server is running on port ${PORT}`);
 // });
-
-// server.js
 
 const express = require('express');
 const dotenv = require('dotenv');
