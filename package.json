@@ -18,7 +18,8 @@
     "express-async-handler": "^1.2.0",
     "git": "^0.1.5",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^7.5.1",
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.5.3",
     "morgan": "^1.10.0",
     "react-router-dom": "^6.16.0"
   }
