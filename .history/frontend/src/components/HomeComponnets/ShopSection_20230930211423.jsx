@@ -4,7 +4,6 @@ import Rating from './rating';
 import Pagination from './pagination';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../LoadingError/Loading';
-import Message from '../LoadingError/Error';
 import { listProduct } from '../../redux/Actions/productActions';
 // import axios from 'axios';
 
@@ -29,7 +28,7 @@ const ShopSection = () => {
 
   return (
     <>
-      <div className="Container mr-5 ml-5">
+      <div className="Container">
         <div className="section">
           <div className="row">
             <div className="col-lg-12 col-md-12 article">
@@ -37,7 +36,7 @@ const ShopSection = () => {
                 {loading ? (
                   <Loading />
                 ) : error ? (
-                  <Message variant={'alert-danger'}>{error}</Message>
+                  <h5>Error : {error}</h5>
                 ) : (
                   <>
                     {products.map((product) => (

@@ -15,8 +15,8 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
   // const [product, setProduct] = useState([]);
 
-  const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetails;
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, product } = productList;
 
   // console.log(productDetails);
 
@@ -27,6 +27,8 @@ const SingleProduct = () => {
   useEffect(() => {
     dispatch(listProductDetails(productId));
   }, [dispatch, productId]);
+
+  console.log(product);
 
   // useEffect(() => {
   //   const fetchProduct = async () => {

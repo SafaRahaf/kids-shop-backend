@@ -80,7 +80,7 @@ export const productDetailsReducer = (
       return {
         ...state,
         loading: false,
-        product: action.payload
+        product: action.payload // Fix: Use 'product' instead of 'products'
       };
     case PRODUCT_DETAILS_FAIL:
       return {

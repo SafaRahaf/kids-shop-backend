@@ -52,9 +52,17 @@ const SingleProduct = () => {
   //   // }, [id]);
   // }, []);
 
+  if (!product) {
+    return <Message variant={'alert-danger mt-3'}>Product not found</Message>;
+  }
+
   // const product = Products.find((p) => p.id === match.params.id);
 
   // const product = Products.find((p) => p._id === id); // Use "id" to find the product
+
+  // if (!product) {
+  //   return <Message variant={'alert-danger mt-3'}>Product not found</Message>;
+  // }
 
   return (
     <>

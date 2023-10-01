@@ -12,13 +12,12 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const SingleProduct = () => {
-  const dispatch = useDispatch();
   // const [product, setProduct] = useState([]);
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
-  // console.log(productDetails);
+  console.log(productDetails);
 
   const { id } = useParams();
 
@@ -52,9 +51,17 @@ const SingleProduct = () => {
   //   // }, [id]);
   // }, []);
 
+  if (!product) {
+    return <Message variant={'alert-danger mt-3'}>Product not found</Message>;
+  }
+
   // const product = Products.find((p) => p.id === match.params.id);
 
   // const product = Products.find((p) => p._id === id); // Use "id" to find the product
+
+  // if (!product) {
+  //   return <Message variant={'alert-danger mt-3'}>Product not found</Message>;
+  // }
 
   return (
     <>

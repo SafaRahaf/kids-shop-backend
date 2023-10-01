@@ -12,49 +12,45 @@ import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const SingleProduct = () => {
-  const dispatch = useDispatch();
-  // const [product, setProduct] = useState([]);
-
-  const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetails;
-
-  // console.log(productDetails);
+  const [product, setProduct] = useState([]);
 
   const { id } = useParams();
-
-  const productId = id;
-
   useEffect(() => {
-    dispatch(listProductDetails(productId));
-  }, [dispatch, productId]);
+    const fetchProduct = async () => {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:5000/products/${id}`
+        );
+        setProduct(data);
+      } catch (error) {
+        // Handle any errors, e.g., product not found
+        console.error('Error fetching product:', error);
+        setProduct(null); // Set product to null to indicate an error
+      }
+    };
+    fetchProduct();
+    // const fachProduct = async () => {
+    //   const productDot = product.find((p) => p._id === id);
+    //   const { data } = await axios.get(
+    //     `http://localhost:5000/products/${productDot.params.id}`
+    //   );
+    //   setProduct(data);
+    // };
+    // fachProduct();
+    // }, [id]);
+  }, []);
 
-  // useEffect(() => {
-  //   const fetchProduct = async () => {
-  //     try {
-  //       const { data } = await axios.get(
-  //         `http://localhost:5000/products/${id}`
-  //       );
-  //       setProduct(data);
-  //     } catch (error) {
-  //       console.error('Error fetching product:', error);
-  //       setProduct(null);
-  //     }
-  //   };
-  //   fetchProduct();
-  //   // const fachProduct = async () => {
-  //   //   const productDot = product.find((p) => p._id === id);
-  //   //   const { data } = await axios.get(
-  //   //     `http://localhost:5000/products/${productDot.params.id}`
-  //   //   );
-  //   //   setProduct(data);
-  //   // };
-  //   // fachProduct();
-  //   // }, [id]);
-  // }, []);
+  if (!product) {
+    return <Message variant={'alert-danger mt-3'}>Product not found</Message>;
+  }
 
   // const product = Products.find((p) => p.id === match.params.id);
 
   // const product = Products.find((p) => p._id === id); // Use "id" to find the product
+
+  // if (!product) {
+  //   return <Message variant={'alert-danger mt-3'}>Product not found</Message>;
+  // }
 
   return (
     <>

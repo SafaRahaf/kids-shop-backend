@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Row } from 'react-router-dom';
 import Rating from './rating';
 import Pagination from './pagination';
 import { useDispatch, useSelector } from 'react-redux';
@@ -31,7 +31,7 @@ const ShopSection = () => {
     <>
       <div className="Container mr-5 ml-5">
         <div className="section">
-          <div className="row">
+          <Row>
             <div className="col-lg-12 col-md-12 article">
               <div className="shopcontainer row">
                 {loading ? (
@@ -75,7 +75,7 @@ const ShopSection = () => {
                 <Pagination />
               </div>
             </div>
-          </div>
+          </Row>
         </div>
       </div>
     </>

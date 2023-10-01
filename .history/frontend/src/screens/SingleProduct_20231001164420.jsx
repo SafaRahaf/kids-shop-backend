@@ -3,31 +3,31 @@ import Header from '../components/Header';
 import Rating from '../components/HomeComponnets/rating';
 import Message from '../components/LoadingError/Error';
 // import Products from '../data/Products';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  listProduct,
-  listProductDetails
-} from '../redux/Actions/productActions';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const SingleProduct = () => {
-  const dispatch = useDispatch();
-  // const [product, setProduct] = useState([]);
-
-  const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetails;
-
-  // console.log(productDetails);
-
   const { id } = useParams();
-
+  const dispatch = useDispatch();
   const productId = id;
+
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, product } = productList; // <-- Fix this line
 
   useEffect(() => {
     dispatch(listProductDetails(productId));
   }, [dispatch, productId]);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error || !product) {
+    return <Message variant={'alert-danger mt-3'}>Product not found</Message>;
+  }
+  // const [product, setProduct] = useState([]);
+
+  // const { id } = useParams();
   // useEffect(() => {
   //   const fetchProduct = async () => {
   //     try {
@@ -36,8 +36,9 @@ const SingleProduct = () => {
   //       );
   //       setProduct(data);
   //     } catch (error) {
+  //       // Handle any errors, e.g., product not found
   //       console.error('Error fetching product:', error);
-  //       setProduct(null);
+  //       setProduct(null); // Set product to null to indicate an error
   //     }
   //   };
   //   fetchProduct();
@@ -52,9 +53,17 @@ const SingleProduct = () => {
   //   // }, [id]);
   // }, []);
 
+  if (!product) {
+    return <Message variant={'alert-danger mt-3'}>Product not found</Message>;
+  }
+
   // const product = Products.find((p) => p.id === match.params.id);
 
   // const product = Products.find((p) => p._id === id); // Use "id" to find the product
+
+  // if (!product) {
+  //   return <Message variant={'alert-danger mt-3'}>Product not found</Message>;
+  // }
 
   return (
     <>

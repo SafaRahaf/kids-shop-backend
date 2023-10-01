@@ -6,8 +6,8 @@ const productRoutes = require('./routes/ProductRoutes.js');
 dotenv.config();
 connectToDatabase();
 const cors = require('cors');
-const { NotFound } = require('./middleweres/Error.js');
-const { ErrorHandler } = require('./middleweres/Error.js');
+const { NotFound } = require('./middleweres/Errorjs');
+const { ErrorHandler } = require('./middleweres/Errorjs');
 
 const app = express();
 

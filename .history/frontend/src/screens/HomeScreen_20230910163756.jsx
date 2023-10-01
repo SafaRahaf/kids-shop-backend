@@ -7,7 +7,7 @@ import Footer from '../components/Foote';
 
 const HomeScreen = () => {
   return (
-    <div className="m-3">
+    <div>
       <Header />
       <ShopSection />
       <CalltoActionSection />

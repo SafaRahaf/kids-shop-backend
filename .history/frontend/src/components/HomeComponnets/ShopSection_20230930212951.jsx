@@ -29,7 +29,7 @@ const ShopSection = () => {
 
   return (
     <>
-      <div className="Container mr-5 ml-5">
+      <div className="Container m-3">
         <div className="section">
           <div className="row">
             <div className="col-lg-12 col-md-12 article">

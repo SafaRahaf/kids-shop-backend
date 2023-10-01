@@ -28,6 +28,8 @@ const SingleProduct = () => {
     dispatch(listProductDetails(productId));
   }, [dispatch, productId]);
 
+  console.log(product);
+
   // useEffect(() => {
   //   const fetchProduct = async () => {
   //     try {

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loading = () => {
   return (
-    <div className="d-flex justify-content-center mb-3">
+    <div className="d-flex justify-content-center">
       <div
         className="spinner-border text-success"
         role="status"

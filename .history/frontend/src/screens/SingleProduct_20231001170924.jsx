@@ -52,6 +52,10 @@ const SingleProduct = () => {
   //   // }, [id]);
   // }, []);
 
+  if (!product) {
+    return product;
+  }
+
   // const product = Products.find((p) => p.id === match.params.id);
 
   // const product = Products.find((p) => p._id === id); // Use "id" to find the product

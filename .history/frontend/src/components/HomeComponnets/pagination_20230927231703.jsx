@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom';
 const pagination = () => {
   return (
     <nav>
-      <ul
-        className="pagination"
-        style={{ justifyContent: 'center', paddingTop: '30px' }}
-      >
+      <ul className="pagination" style={{ justifyContent: 'center' }}>
         <li className={`page-item active`}>
           <Link className="page-link" to={'#'}>
             1

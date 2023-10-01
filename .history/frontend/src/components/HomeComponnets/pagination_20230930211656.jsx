@@ -6,7 +6,7 @@ const pagination = () => {
     <nav>
       <ul
         className="pagination"
-        style={{ justifyContent: 'center', paddingTop: '30px' }}
+        style={{ justifyContent: 'center', alignItems: 'center' }}
       >
         <li className={`page-item active`}>
           <Link className="page-link" to={'#'}>

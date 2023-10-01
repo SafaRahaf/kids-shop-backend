@@ -28,6 +28,8 @@ const SingleProduct = () => {
     dispatch(listProductDetails(productId));
   }, [dispatch, productId]);
 
+  console.log(product);
+
   // useEffect(() => {
   //   const fetchProduct = async () => {
   //     try {
@@ -63,7 +65,7 @@ const SingleProduct = () => {
         <div className="row">
           <div className="col-md-6">
             <div className="single-image">
-              <img src={product.image} alt={product.name} />
+              {/* <img src={product.image} alt={product.name} /> */}
             </div>
           </div>
           <div className="col-md-6">

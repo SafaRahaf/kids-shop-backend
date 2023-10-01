@@ -29,7 +29,7 @@ const ShopSection = () => {
 
   return (
     <>
-      <div className="Container mr-5 ml-5">
+      <div className="Container">
         <div className="section">
           <div className="row">
             <div className="col-lg-12 col-md-12 article">
@@ -37,7 +37,7 @@ const ShopSection = () => {
                 {loading ? (
                   <Loading />
                 ) : error ? (
-                  <Message variant={'alert-danger'}>{error}</Message>
+                  <Message />
                 ) : (
                   <>
                     {products.map((product) => (
