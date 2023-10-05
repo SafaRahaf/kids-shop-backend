@@ -30,11 +30,4 @@ userRouter.post(
   })
 );
 
-userRouter.get(
-  '/profile',
-  asyncHadler(async (req, res) => {
-    res.send('User Profile');
-  })
-);
-
 module.exports = userRouter;

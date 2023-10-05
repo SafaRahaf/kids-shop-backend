@@ -31,9 +31,8 @@ userRouter.post(
 );
 
 userRouter.get(
-  '/profile',
   asyncHadler(async (req, res) => {
-    res.send('User Profile');
+    '/profile', res.send('User Profile');
   })
 );
 

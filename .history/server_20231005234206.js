@@ -18,8 +18,7 @@ const { ErrorHandler } = require('./middleweres/Error.js');
 const app = express();
 
 app.use(cors());
-// app.use(bodyParser.json());
-app.use(express.json());
+app.use(bodyParser.json());
 
 app.use('/import', ImportData);
 app.use('/products', productRoutes);

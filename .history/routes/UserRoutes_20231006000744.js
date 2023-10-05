@@ -1,8 +1,8 @@
 const express = require('express');
 const asyncHadler = require('express-async-handler');
 const User = require('../Models/UserModel');
-// const generateToken = require('../path-to-your/generateToken');
-const generateToken = require('../utils/generateToken');
+const generateToken = require('../path-to-your/generateToken');
+// const generateToken = require('../utils/generateToken');
 
 // Route definitions...
 
@@ -27,13 +27,6 @@ userRouter.post(
       res.status(401);
       throw new Error('Invalid Email or password');
     }
-  })
-);
-
-userRouter.get(
-  '/profile',
-  asyncHadler(async (req, res) => {
-    res.send('User Profile');
   })
 );
 
