@@ -3,8 +3,6 @@ const asyncHadler = require('express-async-handler');
 const User = require('../Models/UserModel');
 const generateToken = require('../utils/generateToken');
 const protect = require('../middleweres/AuthMiddlewere');
-const UserSchema = require('../Models/UserModel');
-const bcrypt = require('bcryptjs');
 
 // Route definitions...
 
@@ -32,52 +30,30 @@ userRouter.post(
   })
 );
 
-userRouter.post(
-  '/',
+//Profile
+userRouter.get(
+  '/profile',
+  protect,
   asyncHadler(async (req, res) => {
-    // try {
-    const { name, email, password } = req.body;
-
-    const existingUser = await User.findOne({ email });
-
-    if (existingUser) {
-      res.status(400);
-      throw new Error('User Alredy Exists');
-    }
-
-    const user = await User.create({
-      name,
-      email,
-      password
-    });
+    // res.send('User Profile');
+    const user = await User.findById(req.user._id);
 
     if (user) {
-      res.status(201).json({
+      res.json({
         _id: user._id,
         name: user.name,
         email: user.email,
         isAdmin: user.isAdmin,
-        token: generateToken(user._id)
+        createdAt: user.createdAt
       });
     } else {
-      res.status(400);
-      throw new Error('Invalid User Data');
+      res.status(404);
+      throw new Error('user not found');
     }
-    // }
   })
 );
 
-// );
-
-//   res.status(201).json({ message: 'User registered successfully' });
-// } catch (error) {
-//   console.error(error);
-//   res.status(500).json({ message: 'Server error' });
-// }
-//   })
-// );
-
-//Profile
+//Register
 userRouter.get(
   '/profile',
   protect,

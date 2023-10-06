@@ -32,15 +32,14 @@ userRouter.post(
   })
 );
 
+//Register
 userRouter.post(
   '/',
   asyncHadler(async (req, res) => {
-    // try {
     const { name, email, password } = req.body;
+    const userExists = await User.findOne({ email });
 
-    const existingUser = await User.findOne({ email });
-
-    if (existingUser) {
+    if (userExists) {
       res.status(400);
       throw new Error('User Alredy Exists');
     }
@@ -63,19 +62,8 @@ userRouter.post(
       res.status(400);
       throw new Error('Invalid User Data');
     }
-    // }
   })
 );
-
-// );
-
-//   res.status(201).json({ message: 'User registered successfully' });
-// } catch (error) {
-//   console.error(error);
-//   res.status(500).json({ message: 'Server error' });
-// }
-//   })
-// );
 
 //Profile
 userRouter.get(

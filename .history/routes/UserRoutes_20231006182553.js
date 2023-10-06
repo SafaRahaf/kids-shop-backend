@@ -32,15 +32,14 @@ userRouter.post(
   })
 );
 
+//Register
 userRouter.post(
   '/',
   asyncHadler(async (req, res) => {
-    // try {
     const { name, email, password } = req.body;
+    const userExists = await User.findOne({ email });
 
-    const existingUser = await User.findOne({ email });
-
-    if (existingUser) {
+    if (userExists) {
       res.status(400);
       throw new Error('User Alredy Exists');
     }
@@ -63,19 +62,18 @@ userRouter.post(
       res.status(400);
       throw new Error('Invalid User Data');
     }
-    // }
   })
 );
 
-// );
+UserSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) {
+    next();
+  }
 
-//   res.status(201).json({ message: 'User registered successfully' });
-// } catch (error) {
-//   console.error(error);
-//   res.status(500).json({ message: 'Server error' });
-// }
-//   })
-// );
+  const salt = await bcrypt.genSalt(10); // Fix typo here
+  // const salt = console.log('first');
+  this.password = await bcrypt.hash(this.password, salt);
+});
 
 //Profile
 userRouter.get(

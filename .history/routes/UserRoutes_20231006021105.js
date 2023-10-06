@@ -1,10 +1,9 @@
 const express = require('express');
 const asyncHadler = require('express-async-handler');
 const User = require('../Models/UserModel');
+// const generateToken = require('../path-to-your/generateToken');
 const generateToken = require('../utils/generateToken');
 const protect = require('../middleweres/AuthMiddlewere');
-const UserSchema = require('../Models/UserModel');
-const bcrypt = require('bcryptjs');
 
 // Route definitions...
 
@@ -32,52 +31,6 @@ userRouter.post(
   })
 );
 
-userRouter.post(
-  '/',
-  asyncHadler(async (req, res) => {
-    // try {
-    const { name, email, password } = req.body;
-
-    const existingUser = await User.findOne({ email });
-
-    if (existingUser) {
-      res.status(400);
-      throw new Error('User Alredy Exists');
-    }
-
-    const user = await User.create({
-      name,
-      email,
-      password
-    });
-
-    if (user) {
-      res.status(201).json({
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        isAdmin: user.isAdmin,
-        token: generateToken(user._id)
-      });
-    } else {
-      res.status(400);
-      throw new Error('Invalid User Data');
-    }
-    // }
-  })
-);
-
-// );
-
-//   res.status(201).json({ message: 'User registered successfully' });
-// } catch (error) {
-//   console.error(error);
-//   res.status(500).json({ message: 'Server error' });
-// }
-//   })
-// );
-
-//Profile
 userRouter.get(
   '/profile',
   protect,

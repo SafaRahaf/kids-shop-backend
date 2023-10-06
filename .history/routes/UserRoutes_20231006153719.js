@@ -3,8 +3,6 @@ const asyncHadler = require('express-async-handler');
 const User = require('../Models/UserModel');
 const generateToken = require('../utils/generateToken');
 const protect = require('../middleweres/AuthMiddlewere');
-const UserSchema = require('../Models/UserModel');
-const bcrypt = require('bcryptjs');
 
 // Route definitions...
 
@@ -32,50 +30,46 @@ userRouter.post(
   })
 );
 
+//Register
 userRouter.post(
   '/',
   asyncHadler(async (req, res) => {
-    // try {
-    const { name, email, password } = req.body;
+    try {
+      const { name, email, password } = req.body;
 
-    const existingUser = await User.findOne({ email });
+      // Check if the user already exists
+      const userExists = await User.findOne({ email });
 
-    if (existingUser) {
-      res.status(400);
-      throw new Error('User Alredy Exists');
-    }
+      if (userExists) {
+        res.status(400).json({ message: 'User already exists' });
+        return;
+      }
 
-    const user = await User.create({
-      name,
-      email,
-      password
-    });
-
-    if (user) {
-      res.status(201).json({
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        isAdmin: user.isAdmin,
-        token: generateToken(user._id)
+      // Create a new user
+      const user = await User.create({
+        name,
+        email,
+        password
       });
-    } else {
-      res.status(400);
-      throw new Error('Invalid User Data');
+
+      // Check if the user was created successfully
+      if (user) {
+        res.status(201).json({
+          _id: user._id,
+          name: user.name,
+          email: user.email,
+          isAdmin: user.isAdmin,
+          token: generateToken(user._id)
+        });
+      } else {
+        res.status(500).json({ message: 'Failed to create user' });
+      }
+    } catch (error) {
+      console.error('Error in user registration:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
     }
-    // }
   })
 );
-
-// );
-
-//   res.status(201).json({ message: 'User registered successfully' });
-// } catch (error) {
-//   console.error(error);
-//   res.status(500).json({ message: 'Server error' });
-// }
-//   })
-// );
 
 //Profile
 userRouter.get(
