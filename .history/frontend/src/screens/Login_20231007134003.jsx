@@ -38,7 +38,7 @@ const Login = () => {
       <div className="container d-flex flex-column justify-content-center align-items-center login">
         {error && <Message variant={'alert-danger'}>{error}</Message>}
         {error && <Loading />}
-        <form className="Login col-md-8 col-lg-4 col-11" onSubmit={submitBtn}>
+        <form className="Login col-md-8 col-lg-4 col-11" onClick={submitBtn}>
           <input
             type="email"
             placeholder="Email"
